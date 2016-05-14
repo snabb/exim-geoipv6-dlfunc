@@ -60,14 +60,17 @@ make install
 ## Usage
 
 Exim must be compiled with the "dlfunc" feature enabled. On Debian
-and Ubuntu this is available in exim4-daemon-heavy package but *not*
-in exim4-daemon-light package.
+and Ubuntu this is available in `exim4-daemon-heavy` package but *not*
+in `exim4-daemon-light` package.
 
 You need to have MaxMind's GeoIP database available in the correct
 location. IPv4 and IPv6 databases are in separate files. The Lite version
 of the database is available free of charge at MaxMind web site. On Debian
-and Ubuntu it is available in geoip-database (or geoip-database-contrib)
-package.
+and Ubuntu it is available in `geoip-database` (or `geoip-database-contrib`)
+package:
+```
+apt-get install geoip-database-contrib
+```
 
 You can add something such as the following in Exim connect ACL:
 ```
