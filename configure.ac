@@ -1,4 +1,4 @@
-AC_INIT([MaxMind GeoIP dlfunc for Exim], [0.1], [snabb@epipe.com],
+AC_INIT([MaxMind GeoIP dlfunc for Exim], [0.1], [],
   [exim-geoipv6-dlfunc], [http://dist.epipe.com/exim/])
 
 AC_CONFIG_SRCDIR([exim-geoipv6-dlfunc.c])

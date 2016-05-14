@@ -8,7 +8,7 @@ senders according to the country code of the sender's IP address.
 
 Download:	http://dist.epipe.com/exim/
 GitHub:		https://github.com/snabb/exim-geoipv6-dlfunc
-Author:		Janne Snabb <snabb@epipe.com>
+Author:		Janne Snabb snabb at epipe.com
 License:	LGPL version 2.1 or later
 
 
@@ -22,7 +22,11 @@ without getting a headache from thinking about compiler and linker flags.
 Exim's local_scan.h header file is needed for compilation. Also MaxMind's
 GeoIP C API library is needed, version 1.4.7 or newer. On Debian and
 Ubuntu the dependencies are available in `exim4-dev` and `libgeoip-dev`
-packages. Alternatively you may point the include path in CPPFLAGS to
+packages:
+```
+apt-get install exim4-dev libgeoip-dev
+```
+Alternatively you may point the include path in CPPFLAGS to
 some other directory where Exim's local_scan.h is located (such as Exim
 build directory).
 
