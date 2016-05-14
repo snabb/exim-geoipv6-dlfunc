@@ -15,3 +15,6 @@ m4/*
 Makefile.in
 Makefile
 stamp-h1
+exim-geoipv6-dlfunc-*.README.txt
+exim-geoipv6-dlfunc-*.tar.gz
+*.o
