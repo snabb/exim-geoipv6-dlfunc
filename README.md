@@ -100,3 +100,12 @@ message header which indicates the country code of the connecting IP:
 warn	condition = ${if def:acl_c_geoip_country_code}
 	add_header = X-GeoIP: $acl_c_geoip_country_code
 ```
+
+## Working with development version
+
+If you check out the development version from GitHub, you need to have
+GNU autotools, libtool, etc. installed.
+
+To generate all the automatically created files you need to run the
+`bootstrap` script.
+
