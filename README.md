@@ -1,10 +1,10 @@
 MaxMind GeoIP dlfunc for Exim
 =============================
 
-This is an IPv6 capable GeoIP dlfunc library for Exim. It implements an
-interface between Exim access control lists and MaxMind's GeoIP database.
-This can be useful for greylisting or scoring IP addresses of SMTP
-senders according to the country code of the sender's IP address.
+This is an IPv4 and IPv6 capable GeoIP dlfunc library for Exim. It
+implements an interface between Exim access control lists and MaxMind's
+GeoIP database.  This can be useful for greylisting or scoring IP addresses
+of SMTP senders according to the country code of the sender's IP address.
 
 - Download:	http://dist.epipe.com/exim/
 - GitHub:	https://github.com/snabb/exim-geoipv6-dlfunc
