@@ -8,7 +8,7 @@ senders according to the country code of the sender's IP address.
 
 - Download:	http://dist.epipe.com/exim/
 - GitHub:	https://github.com/snabb/exim-geoipv6-dlfunc
-- Author:	Janne Snabb snabb at epipe.com
+- Author:	Janne Snabb, snabb at epipe.com
 - License:	LGPL version 2.1 or later
 
 
