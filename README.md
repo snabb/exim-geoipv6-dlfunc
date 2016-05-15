@@ -6,10 +6,10 @@ interface between Exim access control lists and MaxMind's GeoIP database.
 This can be useful for greylisting or scoring IP addresses of SMTP
 senders according to the country code of the sender's IP address.
 
-Download:	http://dist.epipe.com/exim/
-GitHub:		https://github.com/snabb/exim-geoipv6-dlfunc
-Author:		Janne Snabb snabb at epipe.com
-License:	LGPL version 2.1 or later
+- Download:	http://dist.epipe.com/exim/
+- GitHub:	https://github.com/snabb/exim-geoipv6-dlfunc
+- Author:	Janne Snabb snabb at epipe.com
+- License:	LGPL version 2.1 or later
 
 
 ## Installation
@@ -66,7 +66,7 @@ in `exim4-daemon-light` package.
 You need to have MaxMind's GeoIP database available in the correct
 location. IPv4 and IPv6 databases are in separate files. The Lite version
 of the database is available free of charge at MaxMind web site. On Debian
-and Ubuntu it is available in `geoip-database` (or `geoip-database-contrib`)
+and Ubuntu it is available in `geoip-database` or `geoip-database-contrib`
 package:
 ```
 apt-get install geoip-database-contrib
@@ -74,31 +74,31 @@ apt-get install geoip-database-contrib
 
 You can add something such as the following in Exim connect ACL:
 ```
-warn	set acl_c_geoip_country_code = \
-		${dlfunc{/usr/local/lib/exim4/exim-geoipv6-dlfunc.so}\
-		{geoip_country_code}{$sender_host_address}}
+warn    set acl_c_geoip_country_code = \
+        ${dlfunc{/usr/local/lib/exim4/exim-geoipv6-dlfunc.so}\
+        {geoip_country_code}{$sender_host_address}}
 ```
 
 After that you can use $acl_c_geoip_country_code variable in ACL
 conditions, for example:
 ```
-deny	condition = ${if inlist{$acl_c_geoip_country_code}{US:GB}}
-	message = We do not accept messages from your country.
+deny    condition = ${if inlist{$acl_c_geoip_country_code}{US:GB}}
+        message = We do not accept messages from your country.
 ```
 
 If you are using Exim version older than 4.77 you need to use "forany"
 instead of "inlist" if you want to match against a list of country codes:
 ```
-warn	condition = ${if forany{US:GB}\
-		{eq{$item}{$acl_c_geoip_country_code}}}
-	set acl_c_ipscore = ${eval:$acl_c_ipscore+10}
+warn    condition = ${if forany{US:GB}\
+                {eq{$item}{$acl_c_geoip_country_code}}}
+        set acl_c_ipscore = ${eval:$acl_c_ipscore+10}
 ```
 
 You can also add something like the following in the DATA ACL to add a
 message header which indicates the country code of the connecting IP:
 ```
-warn	condition = ${if def:acl_c_geoip_country_code}
-	add_header = X-GeoIP: $acl_c_geoip_country_code
+warn    condition = ${if def:acl_c_geoip_country_code}
+        add_header = X-GeoIP: $acl_c_geoip_country_code
 ```
 
 ## Working with development version
