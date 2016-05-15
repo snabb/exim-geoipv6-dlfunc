@@ -75,8 +75,8 @@ apt-get install geoip-database-contrib
 You can add something such as the following in Exim connect ACL:
 ```
 warn    set acl_c_geoip_country_code = \
-        ${dlfunc{/usr/local/lib/exim4/exim-geoipv6-dlfunc.so}\
-        {geoip_country_code}{$sender_host_address}}
+                ${dlfunc{/usr/local/lib/exim4/exim-geoipv6-dlfunc.so}\
+                        {geoip_country_code}{$sender_host_address}}
 ```
 
 After that you can use $acl_c_geoip_country_code variable in ACL
