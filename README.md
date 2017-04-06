@@ -30,6 +30,8 @@ Alternatively you may point the include path in CPPFLAGS to
 some other directory where Exim's local_scan.h is located (such as Exim
 build directory).
 
+RHEL/CentOS/etc. have the GeoIP library in `GeoIP-devel` package.
+
 You may want to alter some settings at the start of exim-geoipv6-dlfunc.c
 to suit your local needs.
 
